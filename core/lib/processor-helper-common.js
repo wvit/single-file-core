@@ -93,13 +93,18 @@ class ProcessorHelperCommon {
 		const processAttributeArgs = [
 			["link[href][rel*=\"icon\"]", "href", true],
 			["object[type=\"image/svg+xml\"], object[type=\"image/svg-xml\"], object[data*=\".svg\"]", "data"],
-			["img[src], input[src][type=image]", "src", false, true],
 			["embed[src*=\".svg\"]", "src"],
 			["video[poster]", "poster"],
 			["*[background]", "background"],
 			["image", "xlink:href"],
 			["image", "href"]
 		];
+
+		if(!window.singleFileOriginImageUrl) {
+			/** wv-marker: 判断图片资源是否需要转为二进制数据 */
+	        processAttributeArgs.push(["img[src], input[src][type=image]", "src", false, true])
+		}
+
 		if (options.blockImages) {
 			doc.querySelectorAll("svg").forEach(element => element.remove());
 		}

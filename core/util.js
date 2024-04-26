@@ -242,12 +242,7 @@ function getInstance(utilOptions) {
 		NO_SCRIPT_PROPERTY_NAME: helper.NO_SCRIPT_PROPERTY_NAME
 	};
 
-	async function getContent(resourceURL, options) {
-    /** wv-marker: 判断图片资源是否需要转为二进制数据 */
-    if(options.expectedType === 'image') {
-      options.asBinary = window.singleFileImageAsBinary ?? options.asBinary
-    }
-    
+	async function getContent(resourceURL, options) {    
 		let response, startTime, networkTimeoutId, networkTimeoutPromise, resolveNetworkTimeoutPromise;
 		const fetchResource = utilOptions.fetch;
 		const fetchFrameResource = utilOptions.frameFetch;
