@@ -5,7 +5,7 @@
   "author": "Gildas Lormeau",
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup --config"
   },
   "repository": {
     "type": "git",
@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/gildas-lormeau/single-file-core/issues"
   },
-  "homepage": "https://github.com/gildas-lormeau/single-file-core#readme"
+  "homepage": "https://github.com/gildas-lormeau/single-file-core#readme",
+  "devDependencies": {
+    "rollup": "^4.16.4"
+  }
 }
